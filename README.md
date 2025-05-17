@@ -1,4 +1,4 @@
-##  🍔 BurgerHouse - Site da Lanchonete
+##  🍔 PandasBBQ- Site da Lanchonete
 🌐 Interface MVP com Vue.js
 
 ### 📌 Importante
