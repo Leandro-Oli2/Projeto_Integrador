@@ -1,27 +1,29 @@
+
 <template>
   <nav class="navbar">
     <div class="nav-container">
       <!-- Logo -->
       <div class="logo">
-        <img src="../assets/logo.png" alt="Logo" />
+        <img src="../assets/logo (2).png" alt="Logo" />
       </div>
 
       <!-- Menu links -->
       <ul class="nav-links" :class="{ 'active': isMobileMenuOpen }">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Menu</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li class="teste"><a href="#">Home</a></li>
+        <li class="teste"><a href="#">Menu</a></li>
+        <li class="teste2"><a href="#">About</a></li>
+        <li class="teste2"><a href="#">Contact</a></li>
       </ul>
 
-      
-      <div class="icons">
-        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/5511999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="/login"><i class="fas fa-user"></i></a>
+      <div class="navbar-right">
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="icon-link">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" aria-label="WhatsApp" class="icon-link">
+          <i class="fab fa-whatsapp"></i>
+        </a>
       </div>
 
-      
       <div class="hamburger" @click="toggleMobileMenu">
         <i class="fas fa-bars"></i>
       </div>
@@ -45,13 +47,19 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+</style>
 
+<style scoped>
 .navbar {
-  position: fixed;
+  position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
   width: 100%;
-  background-color: #ce2317;
+  background-color: transparent;
   z-index: 1000;
   padding: 0.8rem 1.5rem;
   backdrop-filter: blur(6px);
@@ -65,7 +73,8 @@ export default {
 }
 
 .logo img {
-  height: 50px;
+  height: 100px;
+  width: 120px;
 }
 
 .nav-links {
@@ -73,28 +82,59 @@ export default {
   flex: 1;
   justify-content: center;
   list-style: none;
-  gap: 2rem;
+  max-width: 600px;
+  width: 100%;
+  gap: 4rem;
 }
+.nav-links .teste a{
+    color: black;
+    font-weight: bold;
+    padding: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.nav-links .teste a:hover{
+     background-color: rgb(71, 69, 69);
+    color: white;
+    border-radius: 20px;
+}
+.nav-links .teste2 a{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.nav-links .teste2 a:hover{
+    background-color: rgb(255, 250, 250);
+    color: rgb(37, 37, 37);
+    border-radius: 20px;
+}
+
 
 .nav-links li a {
   text-decoration: none;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
 }
 
-/* Ícones à direita */
-.icons {
+.navbar-right {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+  margin-right: 2.5rem;
 }
 
-.icons i {
+.icon-link {
   color: white;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
 }
 
-/* Botão hamburger (mobile) */
+.icon-link:hover {
+  color: #ffe066;
+}
+
 .hamburger {
   display: none;
   font-size: 1.8rem;
@@ -102,7 +142,6 @@ export default {
   cursor: pointer;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .nav-links {
     display: none;

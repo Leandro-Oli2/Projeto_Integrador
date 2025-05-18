@@ -1,17 +1,10 @@
-<script setup>
-// import PrimeiroComponente from './components/PrimeiroComponente.vue';
-// import ComDados from './components/ComDados.vue';
-// import ComponenteReativosPrimitivos from './components/ComponenteReativosPrimitivos.vue';
-import Header from './components/Header.vue';
-</script>
-
 <template>
-  <Header/>
-  <!-- <ComponenteReativosPrimitivos/>
-  <ComDados/>
-  <PrimeiroComponente/> -->
+  <Header />
+  <router-view /> 
+  <Footer />
 </template>
 
-<style scoped>
-
-</style>
+<script setup>
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
+</script>
