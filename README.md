@@ -72,7 +72,7 @@ cd burgerhouse
 Instale as dependências:
 
 ```bash
-npm install
+npm i
 ```
 Rode o servidor de desenvolvimento:
 
@@ -83,3 +83,18 @@ Acesse no navegador:
 ```bash
 http://localhost:5173/
 ```
+
+
+### Responsáveis
+
+<div style="display: flex; gap: 10px;">
+  <a href="https://github.com/maker097">
+    <img src="https://github.com/maker097.png" alt="Jão Afonso" style="border-radius: 50%; width: 60px; height: 60px; margin: 10%">
+  </a>
+  <a href="https://github.com/Leandro-Oli2">
+    <img src="https://github.com/Leandro-Oli2.png" alt="Leandro Oliveira" style="border-radius: 50%; width: 60px; height: 60px; margin: 10%">
+  </a>
+  <a href="https://github.com/MariaEduardaSntRib">
+    <img src="https://github.com/MariaEduardaSntRib.png" alt="Maria Ribeiro" style="border-radius: 50%; width: 60px; height: 60px; margin: 10%">
+  </a>
+</div>
