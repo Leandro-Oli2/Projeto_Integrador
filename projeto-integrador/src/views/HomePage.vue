@@ -2,14 +2,13 @@
     <section class="half-screen">
     <div class="left-side">
       <div class="text-content">
-      <div class="title-group">
-        <h3 class="nome-peq">Clássico e Saboroso</h3>
-        <h1>BURGER</h1>
+        <div class="title-group">
+          <h3 class="nome-peq">Clássico e Saboroso</h3>
+          <h1>BURGER</h1>
+        </div>
+        <p>Delicioso hambúrguer feito com ingredientes selecionados, grelhado na perfeição para satisfazer seu paladar.</p>
+        <button v-on:click="goToMenuPage" class="visit-btn">Saiba Mais</button>
       </div>
-      <p>Delicioso hambúrguer feito com ingredientes selecionados, grelhado na perfeição para satisfazer seu paladar.</p>
-      <button class="visit-btn">Saiba Mais</button>
-    </div>
-
     </div>
 
     <div class="right-side">
@@ -25,22 +24,20 @@
   <div class="menu-header">
     <h4>Variedades</h4>
     <h1>Explosão de Sabor</h1>
-    <h3>Conheça nossas opções</h3>
+    <h3>Opções Mais pedidas</h3>
   </div>
 
   <div class="menu-grid">
-  <div class="menu-card" v-for="n in 8" :key="n">
-    <img src="../assets/bugg.png" alt="Hamburguer" />
-    <h2>Hambúrguer {{ n }}</h2>
-    <p class="burger-description">
-      Pão artesanal, carne 150g, queijo derretido, alface e molho especial.
-    </p>
-    <div class="menu-card-footer">
-      <span class="price">R$ 24,90</span>
-      <button class="full-width-button">Adicionar</button>
+    <div class="menu-card" v-for="(burger, index) in burgers" :key="index">
+      <img :src="burger.img" :alt="burger.name" />
+      <h2>{{ burger.name }}</h2>
+      <p class="burger-description">{{ burger.description }}</p>
+      <div class="menu-card-footer">
+        <span class="price">R${{ burger.price }}</span>
+        <button class="full-width-button">Pedir Agora</button>
+      </div>
     </div>
   </div>
-</div>
 <div class="menu-button-wrapper">
   <button v-on:click="goToMenuPage" class="scroll-to-menu-btn">Ver Cardápio Completo</button>
 </div>
@@ -70,12 +67,70 @@
 </template>
 <script setup>
 function goToMenuPage() {
-  window.location.href = ''; 
+  window.location.href = '/cardapio'; 
 }
 function goToAboutPage() {
   window.location.href = '/sobre'; // ajuste conforme sua rota
 }
-
+const burgers = [
+  {
+   category: "Lanches",
+        name: "Veggie Deluxe",
+        description: "Hambúrguer vegano com grão-de-bico, rúcula e maionese verde.",
+        price: 27.0,
+        img: "https://img.freepik.com/fotos-premium/close-up-de-morangos-na-mesa_1048944-14379840.jpg?ga=GA1.1.951944169.1737859116&semt=ais_hybrid&w=740",
+        },
+        {
+        category: "Lanches",
+        name: "Brie Burger",
+        description: "Hambúrguer artesanal com queijo brie e geleia de pimenta.",
+        price: 34.9,
+        img: "https://img.freepik.com/fotos-premium/hamburguer-de-carne-artesanal-com-queijo-e-molho-de-mostarda-e-mel_74692-577.jpg?ga=GA1.1.951944169.1737859116&semt=ais_hybrid&w=740",
+        },
+        {
+        category: "Lanches",
+        name: "Egg Bacon Burger",
+        description: "Hambúrguer com ovo caipira, bacon e cheddar cremoso.",
+        price: 30.5,
+        img: "https://img.freepik.com/fotos-premium/burger-suculento-com-ovo-frito-e-bacon-crocante_198067-1257065.jpg?ga=GA1.1.951944169.1737859116&semt=ais_hybrid&w=740",
+        },
+        {
+        category: "Lanches",
+        name: "Caramel Onion Burger",
+        description: "Cebola caramelizada, carne suculenta e queijo prato.",
+        price: 28.7,
+        img: "https://img.freepik.com/fotos-gratis/cheeseburguer-gourmet-grelhado-em-mesa-de-madeira-rustica-gerada-por-ia_24640-82475.jpg?ga=GA1.1.951944169.1737859116&semt=ais_hybrid&w=740",
+        },
+        {
+        category: "Lanches",
+        name: "Blue Cheese Burger",
+        description: "Carne angus, queijo gorgonzola e mix de folhas.",
+        price: 33.9,
+        img: "https://img.freepik.com/fotos-premium/deliciosos-hamburgueres-com-queijo-azul-bacon-marmelada-de-carne-e-cebola-marmoreada-um-prato-de-salada-com-rucula-e-laranjas-fundo-preto-vista-do-topo_89816-7140.jpg?ga=GA1.1.951944169.1737859116&semt=ais_hybrid&w=740",
+        },
+        {
+        category: "Lanches",
+        name: "Spicy Burger",
+        description: "Hambúrguer apimentado com jalapeños e molho chipotle.",
+        price: 29.0,
+        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80",
+        },
+        {
+        category: "Lanches",
+        name: "Kids Burger",
+        description: "Mini hambúrguer simples com queijo e ketchup.",
+        price: 19.9,
+        img: "https://img.freepik.com/fotos-premium/deliciosa-carne-crua-de-hamburguer-e-pao-torrado_919857-1694.jpg?ga=GA1.1.951944169.1737859116&semt=ais_hybrid&w=740",
+        },
+        {
+        category: "Lanches",
+        name: "Panda Special",
+        description: "Nosso lanche exclusivo com blend da casa e molho secreto.",
+        price: 35.0,
+        img: "https://img.freepik.com/fotos-premium/um-hamburguer-gourmet-com-coberturas-picantes-servido-em-um-prato-preto-em-um-restaurante-mal-iluminado_93675-261906.jpg?ga=GA1.1.951944169.1737859116&semt=ais_hybrid&w=740",
+        },
+  // ...adicione mais burgers aqui
+]
 </script>
 
 <style scoped>
@@ -228,7 +283,7 @@ function goToAboutPage() {
 }
 
 .menu-header h3 {
-  font-size: 2.5rem;
+  font-size: 2.0rem;
   color: #ffffff;
   margin-bottom: 3rem;
 }
@@ -271,6 +326,8 @@ function goToAboutPage() {
   font-size: 1.4rem;
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 0.5rem;
+  color: #ff5e15;
+  text-shadow: 0 0 2.5px #ff5e15aa;
 }
 
 .burger-description {
@@ -295,10 +352,11 @@ function goToAboutPage() {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
+  
 }
 
 .menu-card-footer .full-width-button {
-  background-color: #FD5406;
+  background: linear-gradient(90deg, #ff3e00, #ff6e3e);
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   border: none;
@@ -392,11 +450,84 @@ function goToAboutPage() {
   max-width: 800px;
   object-fit: contain;
 }
+/* A partir de sm (≥576px) */
+@media (min-width: 576px) {
+  .title-group h3 {
+    font-size: 1.8rem;
+  }
+  .title-group h1 {
+    font-size: 5rem;
+  }
 
-
-@media (max-width: 768px) {
-  .burger-column {
-    display: none;
+  .central-burger {
+    width: 70vw;
+    max-width: 500px;
   }
 }
+
+/* A partir de md (≥768px) */
+@media (min-width: 768px) {
+  .title-group h3 {
+    font-size: 1.6rem;
+  }
+  .title-group h1 {
+    font-size: 4rem;
+  }
+
+  .central-burger {
+    width: 60vw;
+    max-width: 600px;
+  }
+}
+
+/* A partir de lg (≥992px) */
+@media (min-width: 992px) {
+  .title-group h3 {
+    font-size: 1.5rem;
+  }
+  .title-group h1 {
+    font-size: 3.5rem;
+  }
+
+  .central-burger {
+    width: 50vw;
+    max-width: 700px;
+  }
+}
+
+/* A partir de xl (≥1200px) */
+@media (min-width: 1200px) {
+  .text-content{
+    margin-right: 10rem;
+  }
+  .title-group h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.9rem;
+  }
+  .title-group h1 {
+    font-size: 4.0rem;
+  }
+  .text-content p {
+    font-size: 1.0rem;
+  }
+  .central-burger {
+    width: 30vw;
+    max-width: 800px;
+  }
+}
+
+/* A partir de xxl (≥1400px) */
+@media (min-width: 1400px) {
+   .title-group h3 {
+    font-size: 2rem;
+  }
+  .title-group h1 {
+    font-size: 6rem;
+  }
+  .central-burger {
+    width: 30vw;
+    max-width: 900px;
+  }
+}
+
 </style>

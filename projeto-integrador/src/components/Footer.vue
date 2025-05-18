@@ -8,21 +8,21 @@
     <div class="footer-section">
       <h4>Links Rápidos</h4>
       <ul>
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Cardápio</a></li>
-        <li><a href="#">Sobre Nós</a></li>
-        <li><a href="#">Contato</a></li>
+        <li><a href="/">Início</a></li>
+        <li><a href="/cardapio">Cardápio</a></li>
+        <li><a href="/sobre">Sobre Nós</a></li>
+        <li><a href="/contato">Contato</a></li>
       </ul>
     </div>
     <div class="footer-section">
       <h4>Contato</h4>
-      <p>Email: atendimento@tweebburgers.com</p>
+      <p>Email: atendimento@burguerhouse.com</p>
       <p>Telefone: (67) 99999-9999</p>
       <p>Campo Grande - MS</p>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2025 Tweeb Burgers. Todos os direitos reservados.</p>
+    <p>&copy; 2025 Burger House. Todos os direitos reservados.</p>
   </div>
 </footer>
 

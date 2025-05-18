@@ -9,10 +9,10 @@
 
       <!-- Menu links -->
       <ul class="nav-links" :class="{ 'active': isMobileMenuOpen }">
-        <li class="teste"><a href="#">Home</a></li>
-        <li class="teste"><a href="#">Menu</a></li>
-        <li class="teste2"><a href="#">About</a></li>
-        <li class="teste2"><a href="#">Contact</a></li>
+        <li class="teste"><a href="/">Home</a></li>
+        <li class="teste"><a href="/cardapio">Menu</a></li>
+        <li class="teste2"><a href="/sobre">Sobre</a></li>
+        <li class="teste2"><a href="/contato">Contato</a></li>
       </ul>
 
       <div class="navbar-right">
@@ -21,6 +21,9 @@
         </a>
         <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" aria-label="WhatsApp" class="icon-link">
           <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="/login" aria-label="Login" class="icon-link">
+          <i class="fas fa-user"></i>
         </a>
       </div>
 
@@ -47,11 +50,9 @@ export default {
 };
 </script>
 
-<style>
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
-</style>
-
 <style scoped>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
 .navbar {
   position: absolute;
   top: 0;
@@ -62,7 +63,6 @@ export default {
   background-color: transparent;
   z-index: 1000;
   padding: 0.8rem 1.5rem;
-  backdrop-filter: blur(6px);
 }
 
 .nav-container {
@@ -80,35 +80,27 @@ export default {
 .nav-links {
   display: flex;
   flex: 1;
-  justify-content: center;
+  justify-content: flex-start;
   list-style: none;
   max-width: 600px;
   width: 100%;
-  gap: 4rem;
-}
-.nav-links .teste a{
-    color: black;
-    font-weight: bold;
-    padding: 1rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-.nav-links .teste a:hover{
-     background-color: rgb(71, 69, 69);
-    color: white;
-    border-radius: 20px;
-}
-.nav-links .teste2 a{
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    padding: 1rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-.nav-links .teste2 a:hover{
-    background-color: rgb(255, 250, 250);
-    color: rgb(37, 37, 37);
-    border-radius: 20px;
+  gap: 3rem;
 }
 
+.nav-links .teste a,
+.nav-links .teste2 a {
+  color: rgb(240, 24, 24);
+  font-weight: bold;
+  padding: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links .teste a:hover,
+.nav-links .teste2 a:hover {
+  background-color: rgb(71, 69, 69);
+  color: white;
+  border-radius: 20px;
+}
 
 .nav-links li a {
   text-decoration: none;
@@ -125,23 +117,28 @@ export default {
 }
 
 .icon-link {
-  color: white;
-  font-size: 1.5rem;
+  color: rgb(240, 24, 24);
+  font-size: 1.3rem;
   transition: color 0.3s ease;
   text-decoration: none;
 }
 
+.fa-user {
+  font-size: 1.2rem;
+}
+
 .icon-link:hover {
-  color: #ffe066;
+  color: #1f1f1f;
 }
 
 .hamburger {
   display: none;
   font-size: 1.8rem;
-  color: white;
+  color: rgb(240, 24, 24); /* Mudei a cor para combinar com o tema */
   cursor: pointer;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -150,21 +147,42 @@ export default {
     align-items: center;
     background: rgba(0, 0, 0, 0.85);
     position: absolute;
-    top: 70px;
+    top: 70px; /* Ajuste a posição conforme necessário */
     left: 0;
     padding: 1rem 0;
+    transition: max-height 0.3s ease; /* Adiciona transição suave */
+    max-height: 0; /* Inicialmente escondido */
+    overflow: hidden; /* Esconde o conteúdo que excede a altura */
   }
 
   .nav-links.active {
     display: flex;
+    max-height: 300px; /* Ajuste a altura máxima conforme necessário */
   }
 
   .hamburger {
     display: block;
+    margin-right: auto; /* Garante que o hambúrguer fique à direita */
   }
 
-  .icons {
-    display: none;
+  .navbar-right {
+    display: none; /* Esconde os ícones na versão mobile */
   }
 }
+
+@media (max-width: 480px) {
+  .nav-links {
+    padding: 0.5rem 0; /* Ajusta o padding para telas menores */
+  }
+
+  .nav-links li a {
+    font-size: 1.1rem; /* Reduz o tamanho da fonte para telas menores */
+  }
+
+  .icon-link {
+    font-size: 1.2rem; /* Reduz o tamanho dos ícones para telas menores */
+  }
+}
+
+
 </style>
