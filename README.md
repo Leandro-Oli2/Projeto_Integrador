@@ -97,4 +97,7 @@ http://localhost:5173/
   <a href="https://github.com/MariaEduardaSntRib">
     <img src="https://github.com/MariaEduardaSntRib.png" alt="Maria Ribeiro" style="border-radius: 50%; width: 60px; height: 60px; margin: 10%">
   </a>
+  <a href="https://github.com/jpflu09">
+    <img src="https://github.com/jpflu09.png" alt="João Paulo Rufino" style="border-radius: 50%; width: 60px; height: 60px; margin: 10%">
+  </a>
 </div>
