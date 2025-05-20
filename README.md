@@ -69,7 +69,7 @@ git clone https://github.com/seu-usuario/burgerhouse.git
 ```bash
 cd burgerhouse
 ```
-Instale as dependências(será preciso node):
+Instale as dependências(será preciso ter o node):
 https://nodejs.org/pt
 ```bash
 npm i
